@@ -24,7 +24,7 @@ class Tree extends React.Component {
           return <Tree node = {child} />;
         }
         else {
-          return <File node = {child} />;
+          return <FileNode node = {child} />;
         }
       });
     }
