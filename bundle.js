@@ -22786,36 +22786,7 @@ var Tree = function (_React$Component) {
   return Tree;
 }(_react2.default.Component);
 
-// childNodes() {
-//   if (this.props.node.children) {
-//     this.props.node.children.map((child, idx) => {
-//       if (child.type === "folder") {
-//         return <li key = {idx}><Tree node = {child} /></li>;
-//       }
-//       else {
-//         return <li key = {idx}><FileNode node = {child} /></li>;
-//       }
-//     });
-//   }
-// }
-//
-// display() {
-//   if (!this.state.visible) {
-//     return {display: "none"};
-//   }
-// }
-
-
 exports.default = Tree;
-
-// return(
-//   <div>
-//     <h3 onClick={this.toggleVisibility} className={classNames(classObj)}>{this.props.node.name}</h3>
-//     <ul style = {style}>
-//       {this.childNodes()}
-//     </ul>
-//   </div>
-// );
 
 /***/ }),
 /* 187 */
