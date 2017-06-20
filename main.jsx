@@ -1,6 +1,6 @@
 import React from 'react';
 import Tree from './tree';
-import FileNode from './file';
+import FileNode from './file_node';
 
 class Main extends React.Component {
   constructor(props) {
@@ -9,16 +9,20 @@ class Main extends React.Component {
 
   render(){
     return(
-      <ul>
-        {DATA.children.map((child) => {
-          if (child.type === "folder") {
-            return <Tree node = {child} />;
-          }
-          else {
-            return <FileNode node = {child} />;
-          }
-        })}
-      </ul>
+      <div className = "Main">
+        <input className = "Title" placeholder = "Title" value = "Title"/>
+        <input className = "Label" placeholder = "Label" />
+        <ul>
+          {DATA.children.map((child, idx) => {
+            if (child.type === "folder") {
+              return <li key = {idx}><Tree node = {child} /></li>;
+            }
+            else {
+              return <li key = {idx}><FileNode node = {child} /></li>;
+            }
+          })}
+        </ul>
+      </div>
     );
   }
 }

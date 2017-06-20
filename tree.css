@@ -1,0 +1,61 @@
+body {
+  font-family: "Helvetica Neue";
+}
+
+h3 {
+  color: #BF616A;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.open {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: -70px 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.close {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: -56px 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.folder {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: 0 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.private {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: -14px; 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.file {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: -28px 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.folderName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.folderName:hover {
+  background-color: #0080ff;
+}

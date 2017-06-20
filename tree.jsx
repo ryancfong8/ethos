@@ -1,51 +1,110 @@
 import React from 'react';
 import FileNode from './file_node';
+import classNames from 'classnames';
 
 class Tree extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true
+      visible: false
     };
 
     this.toggleVisibility = this.toggleVisibility.bind(this);
-    this.childNodes = this.childNodes.bind(this);
-    this.display = this.display.bind(this);
   }
 
   toggleVisibility(){
     this.setState({visible: !this.state.visible});
   }
 
-  childNodes() {
+  toggle(){
+    if (this.state.visible){
+      return "open";
+    }
+    else {
+      return "close";
+    }
+  }
+
+  folder() {
+    if (this.props.node.private) {
+      return "private";
+    }
+    else {
+      return "folder";
+    }
+  }
+
+  truncate() {
+    if (this.props.node.name.length > 30) {
+      return `${this.props.node.name.slice(0,30)}` + "...";
+    }
+    else {
+      return this.props.node.name;
+    }
+  }
+
+
+  render(){
+    let children;
+    let style;
+
     if (this.props.node.children) {
-      this.props.node.children.map((child) => {
+      children = this.props.node.children.map((child, idx) => {
         if (child.type === "folder") {
-          return <Tree node = {child} />;
-        }
+          return <li key={idx}><Tree node={child} /></li>;
+          }
         else {
-          return <FileNode node = {child} />;
+          return <li key={idx}><FileNode node={child} /></li>;
         }
       });
     }
-  }
 
-  display() {
     if (!this.state.visible) {
-      return {display: "none"};
+      style = {display: "none"};
     }
-  }
 
-  render(){
-    return(
+    return (
       <div>
-        <text>this.props.node.name</text>
-        <ul style = {this.display()}>
-          {this.childNodes()}
+        <div onClick={this.toggleVisibility} className = "folderName">
+          <div className={this.toggle()}></div>
+          <div className={this.folder()}></div>
+          <text>
+            {this.truncate()}
+          </text>
+        </div>
+        <ul style={style}>
+          {children}
         </ul>
       </div>
     );
   }
 }
 
+// childNodes() {
+//   if (this.props.node.children) {
+//     this.props.node.children.map((child, idx) => {
+//       if (child.type === "folder") {
+//         return <li key = {idx}><Tree node = {child} /></li>;
+//       }
+//       else {
+//         return <li key = {idx}><FileNode node = {child} /></li>;
+//       }
+//     });
+//   }
+// }
+//
+// display() {
+//   if (!this.state.visible) {
+//     return {display: "none"};
+//   }
+// }
 export default Tree;
+
+// return(
+//   <div>
+//     <h3 onClick={this.toggleVisibility} className={classNames(classObj)}>{this.props.node.name}</h3>
+//     <ul style = {style}>
+//       {this.childNodes()}
+//     </ul>
+//   </div>
+// );

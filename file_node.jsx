@@ -5,9 +5,23 @@ class FileNode extends React.Component {
     super(props);
   }
 
+  truncate() {
+    if (this.props.node.name.length > 30) {
+      return `${this.props.node.name.slice(0,30)}` + "...";
+    }
+    else {
+      return this.props.node.name;
+    }
+  }
+
   render(){
     return(
-      <text>{this.props.node.name}</text>
+      <div className = "folderName">
+        <div className="file"></div>
+        <text>
+          {this.truncate()}
+        </text>
+      </div>
     );
   }
 }
