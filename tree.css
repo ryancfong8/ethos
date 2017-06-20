@@ -1,13 +1,14 @@
 body {
-  font-family: "Helvetica Neue";
-}
-
-h3 {
-  color: #BF616A;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul, li {
   list-style: none;
+}
+
+.main-list {
+    list-style:none;
+    padding-left:0;
 }
 
 .open {
@@ -15,7 +16,8 @@ ul, li {
   background-position: -70px 0;
   width: 14px;
   height: 14px;
-  margin-right: 5px;
+  margin-right: 10px;
+  color: #d3d3d3;
 }
 
 .close {
@@ -23,7 +25,8 @@ ul, li {
   background-position: -56px 0;
   width: 14px;
   height: 14px;
-  margin-right: 5px;
+  margin-right: 10px;
+  color: #d3d3d3;
 }
 
 .folder {
@@ -31,7 +34,7 @@ ul, li {
   background-position: 0 0;
   width: 14px;
   height: 14px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .private {
@@ -39,7 +42,7 @@ ul, li {
   background-position: -14px; 0;
   width: 14px;
   height: 14px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .file {
@@ -54,8 +57,93 @@ ul, li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .folderName:hover {
   background-color: #0080ff;
+}
+
+.Main {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 10px 20px 3px  #cccccc, -10px 20px 3px #cccccc;
+  box-sizing: border-box;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Title{
+  color: #000;
+}
+
+.Label {
+  color: #cccccc;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #0080ff;
+}
+
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.Done {
+  width: 80px;
+  height: 40px;
+  padding: 20px;
+  background-color: #0080ff;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 0px;
+}
+
+.Done:hover {
+  cursor: pointer;
+  background-color: #0066cc;
+}
+
+.first-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.x {
+  background: url("./icon-sprite.png") no-repeat;
+  background-position: -42px 0;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.x:hover {
+  cursor: pointer;
 }

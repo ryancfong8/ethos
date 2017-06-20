@@ -10,9 +10,12 @@ class Main extends React.Component {
   render(){
     return(
       <div className = "Main">
-        <input className = "Title" placeholder = "Title" value = "Title"/>
-        <input className = "Label" placeholder = "Label" />
-        <ul>
+        <div className = "first-line">
+          <h3 className = "Title">Title</h3>
+          <div className= "x"></div>
+        </div>
+        <h3 className = "Label">Label</h3>
+        <ul className = "main-list">
           {DATA.children.map((child, idx) => {
             if (child.type === "folder") {
               return <li key = {idx}><Tree node = {child} /></li>;
@@ -22,6 +25,10 @@ class Main extends React.Component {
             }
           })}
         </ul>
+        <div className = "footer">
+          <a href="" className = "link">Link</a>
+          <button className = "Done">Done</button>
+        </div>
       </div>
     );
   }

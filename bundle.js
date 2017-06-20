@@ -22516,11 +22516,24 @@ var Main = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'Main' },
-        _react2.default.createElement('input', { className: 'Title', placeholder: 'Title', value: 'Title' }),
-        _react2.default.createElement('input', { className: 'Label', placeholder: 'Label' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'first-line' },
+          _react2.default.createElement(
+            'h3',
+            { className: 'Title' },
+            'Title'
+          ),
+          _react2.default.createElement('div', { className: 'x' })
+        ),
+        _react2.default.createElement(
+          'h3',
+          { className: 'Label' },
+          'Label'
+        ),
         _react2.default.createElement(
           'ul',
-          null,
+          { className: 'main-list' },
           DATA.children.map(function (child, idx) {
             if (child.type === "folder") {
               return _react2.default.createElement(
@@ -22536,6 +22549,20 @@ var Main = function (_React$Component) {
               );
             }
           })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'footer' },
+          _react2.default.createElement(
+            'a',
+            { href: '', className: 'link' },
+            'Link'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'Done' },
+            'Done'
+          )
         )
       );
     }
